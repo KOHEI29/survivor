@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour
         if(InGameModel.Instance.CanUseSkill(index) && _skillExecuters[index].CanDoSkill())
         {
             _skillTask = _skillExecuters[index].DoSkillAsync(this.GetCancellationTokenOnDestroy(), _skillTask);
-            InGameModel.Instance.ReduceSkillStack(1);
+            InGameModel.Instance.ReduceSkillStack(index);
             return true;
         }
         return false;
