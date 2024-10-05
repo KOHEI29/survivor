@@ -114,6 +114,11 @@ public class InGameModel
         }
         OnHpChanged?.Invoke(_repository.PlayerData.HpCurrent, _repository.PlayerData.HpMax);
     }
+    //敵を撃破
+    public void DealEnemy()
+    {
+        _repository.PlayerData.KillCount++;
+    }
     //デバグ用スキルセット。
     //private void SetSkill(int skillId, int value)
     //{

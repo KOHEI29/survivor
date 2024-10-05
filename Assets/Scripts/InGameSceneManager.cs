@@ -8,7 +8,7 @@ public class InGameSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _gameover.SetActive(false);
+        //_gameover.SetActive(false);
 
         InGameModel.Instance.OnStateChanged += UpdateState;
     }
@@ -23,9 +23,9 @@ public class InGameSceneManager : MonoBehaviour
     {
         Time.timeScale = newState == InGameConst.State.Play ? 1f : 0f;
 
-        if(newState == InGameConst.State.GameOver)
-        {
-            _gameover.SetActive(true);
-        }
+        //if(newState == InGameConst.State.GameOver)
+        //{
+        //    _gameover.SetActive(true);
+        //}
     }
 }

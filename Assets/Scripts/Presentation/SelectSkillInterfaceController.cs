@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SelectSkillInterfaceController : MonoBehaviour
 {
-    //[SerializeField]
     private GameObject _wrapper = default;
     [SerializeField]
     private SelectSkillItemComponent[] _item = default;

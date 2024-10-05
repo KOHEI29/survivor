@@ -22,6 +22,7 @@ public class PlayerData : IPlayerData
     public float Time { get; set; }
     public int HpCurrent { get; set; }
     public int HpMax { get; set; }
+    public int KillCount { get; set; }
     public InGameConst.State CurrentState { get; set; }
 }
 public interface IPlayerData
@@ -32,5 +33,6 @@ public interface IPlayerData
     float Time { get; }
     int HpCurrent { get; }
     int HpMax { get; }
+    int KillCount { get; }
     InGameConst.State CurrentState { get; }
 }

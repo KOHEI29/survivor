@@ -81,6 +81,10 @@ public class PlayerController : MonoBehaviour
         if(_moveDirection != Vector3.zero)
         {
             _headingDirection = _moveDirection.normalized;
+            if(_moveDirection.x != 0)
+            {
+                transform.localScale = new Vector3(3 * _moveDirection.x, 3f, 1f);
+            }
         }
 
         _hpGuage.position = transform.position;
@@ -115,24 +119,26 @@ public class PlayerController : MonoBehaviour
         InGameModel.Instance.AddTime(Time.deltaTime);
 
         
-        //0番目のスキル発動
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if(InGameModel.Instance.CanUseSkill(0) && _skillExecuters[0].CanDoSkill())
-            {
-                _skillTask = _skillExecuters[0].DoSkillAsync(this.GetCancellationTokenOnDestroy(), _skillTask);
-                InGameModel.Instance.ReduceSkillStack(0);
-            }
+            //0番目のスキル発動
+            TryUseSkill(0);
         }
-        //1番目のスキル発動
         if(Input.GetKeyDown(KeyCode.Q))
         {
-            if(InGameModel.Instance.CanUseSkill(1) && _skillExecuters[1].CanDoSkill())
-            {
-                _skillTask = _skillExecuters[1].DoSkillAsync(this.GetCancellationTokenOnDestroy(), _skillTask);
-                InGameModel.Instance.ReduceSkillStack(1);
-            }
+            //1番目のスキル発動
+            TryUseSkill(1);
         }
+    }
+    private bool TryUseSkill(int index)
+    {
+        if(InGameModel.Instance.CanUseSkill(index) && _skillExecuters[index].CanDoSkill())
+        {
+            _skillTask = _skillExecuters[index].DoSkillAsync(this.GetCancellationTokenOnDestroy(), _skillTask);
+            InGameModel.Instance.ReduceSkillStack(1);
+            return true;
+        }
+        return false;
     }
     private void OnTriggerEnter(Collider other)
     {

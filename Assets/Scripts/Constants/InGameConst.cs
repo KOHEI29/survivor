@@ -22,4 +22,8 @@ public class InGameConst
     public const float SkillInventoryOffsetX = 95f;
     //スキル入手画面で出る選択肢の数
     public const int SkillSelectCount = 2;
+
+    //ゲームオーバー時のスキル表示用
+    public const float GameOverSkillLeftX = 20f;
+    public const float GameOverSkillOffsetX = 220f;
 }

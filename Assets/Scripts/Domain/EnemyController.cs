@@ -30,6 +30,7 @@ public class EnemyController : MonoBehaviour
             if(_hp <= 0)
             {
                 Destroy(gameObject);
+                InGameModel.Instance.DealEnemy();
                 Instantiate(_exp, transform.position, Quaternion.identity);
             }
         }
