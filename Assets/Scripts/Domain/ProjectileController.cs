@@ -6,8 +6,7 @@ public class ProjectileController : MonoBehaviour, IAttackable
 {
     private Vector3 _moveDirection = Vector3.down;
     private float _moveSpeed = 10f;
-    private int _attack = 1;
-    public int Attack => _attack;
+    public int Attack => 1;
     private const float LifeMax = 2f;
     private float _lifeCount = LifeMax;
 

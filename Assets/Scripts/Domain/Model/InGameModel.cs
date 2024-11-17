@@ -24,7 +24,7 @@ public class InGameModel
     public event UnityAction<int, float, float> OnSkillCoolTimeChanged = default;
     public event UnityAction<int, int> OnSkillStackChanged = default;
 
-    public InGameModel()
+    private InGameModel()
     {
         _repository.Initialize();
     }
@@ -55,9 +55,10 @@ public class InGameModel
     }
 
     //Stateをセット。
-    public void SetState(InGameConst.State state)
+    private void SetState(InGameConst.State state)
     {
         var old = _repository.PlayerData.CurrentState;
+        if(old == state) return;
         _repository.PlayerData.CurrentState = state;
         OnStateChanged?.Invoke(old, state);
     }

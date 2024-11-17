@@ -34,7 +34,7 @@ public class EnemyController : MonoBehaviour
                 Instantiate(_exp, transform.position, Quaternion.identity);
             }
         }
-        if(other.tag == "Player")
+        else if(other.tag == "Player")
         {
             InGameModel.Instance.Damage(_attack);
         }

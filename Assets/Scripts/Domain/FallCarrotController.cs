@@ -5,8 +5,7 @@ using UnityEngine;
 //フォールキャロットコントローラ
 public class FallCarrotController : MonoBehaviour, IAttackable
 {
-    private int _attack = 5;
-    public int Attack => _attack;
+    public int Attack => 5;
 
     [SerializeField]
     private Animator _animator = default;

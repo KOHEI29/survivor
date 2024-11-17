@@ -12,7 +12,6 @@ public class InGameRepository
     public List<SkillData> SkillDatas => _skillDatas;
     //スキルゲット画面に出すスキルデータ
     public List<SkillData> SkillViewData;
-    
 
     //マスターデータ
     private IReadOnlyList<MstSkillData> _mstSkillDatas;

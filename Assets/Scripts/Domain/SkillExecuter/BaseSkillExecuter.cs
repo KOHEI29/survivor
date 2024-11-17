@@ -7,7 +7,7 @@ public class BaseSkillExecuter : ISkillExecuter
     //スキルタイプ
     private InGameConst.SkillType _skillType = InGameConst.SkillType.DEFAULT;
     public InGameConst.SkillType SkillType => _skillType;
-    //攻撃倍率
+    //攻撃倍率などの数値
     private float _skillValue;
     public float SkillValue => _skillValue;
 

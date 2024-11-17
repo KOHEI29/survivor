@@ -6,7 +6,7 @@ public interface ISkillExecuter
 {
     //スキルタイプ
     InGameConst.SkillType SkillType {get;}
-    //攻撃倍率
+    //攻撃倍率などの数値
     float SkillValue {get;}
     //実行可能かどうか
     bool CanDoSkill();

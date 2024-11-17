@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public record MstSkillData
+public record MstSkillData()
 {
     public int Id;
     public int ExecuterId;
